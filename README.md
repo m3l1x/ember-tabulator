@@ -1,7 +1,7 @@
 ember-tabulator
 ==============================================================================
 
-[Short description of the addon.]
+A table renderer component that wraps [Tabulator](http://tabulator.info/).
 
 
 Compatibility
@@ -23,16 +23,21 @@ ember install ember-tabulator
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+```hbs
+<Tabulator
+  @data={{this.data}}
+  @columns={{this.columns}}
+/>
+```
 
+All [supported options of Tabulator](http://tabulator.info/docs/4.7/options) can be given as component arguments, e.g.:
 
-Contributing
-------------------------------------------------------------------------------
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+```hbs
+<Tabulator
+  @height="400px"
+  @headerSort={{false}}
+  @resizableColumns={{true}}
+  @data={{this.data}}
+  @columns={{this.columns}}
+/>
+```
