@@ -24,7 +24,7 @@ Usage
 ------------------------------------------------------------------------------
 
 ```hbs
-<Tabulator
+<EmberTabulator
   @data={{this.data}}
   @columns={{this.columns}}
 />
@@ -33,7 +33,7 @@ Usage
 All [supported options of Tabulator](http://tabulator.info/docs/4.7/options) can be given as component arguments, e.g.:
 
 ```hbs
-<Tabulator
+<EmberTabulator
   @height="400px"
   @headerSort={{false}}
   @resizableColumns={{true}}

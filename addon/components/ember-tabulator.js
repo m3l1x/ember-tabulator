@@ -1,7 +1,7 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 
-export default class TabulatorComponent extends Component {
+export default class EmberTabulatorComponent extends Component {
   instance = undefined;
 
   @action
