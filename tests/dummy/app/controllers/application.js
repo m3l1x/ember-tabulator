@@ -16,7 +16,7 @@ function generateData(rows, cols) {
 
 export default class ApplicationController extends Controller {
   columns = [
-    { title: "COL0", field: "col-0", formatter: this.formatDate },
+    { title: "COL0", field: "col-0", formatter: this.formatDate, frozen:true },
     { title: "COL1", field: "col-1" },
     { title: "COL2", field: "col-2" },
     { title: "COL3", field: "col-3" },
@@ -57,6 +57,6 @@ export default class ApplicationController extends Controller {
 
   @action
   formatDate(cell) {
-    return `Formatted ${cell.getValue()}`
+    return `<em>Formatted ${cell.getValue()}</em>`
   }
 }
