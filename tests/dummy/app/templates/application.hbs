@@ -1,3 +1,12 @@
-<h2 id="title">Welcome to Ember</h2>
-
 {{outlet}}
+
+<div class="table-wrapper">
+  <Tabulator
+    @height="100%"
+    @data={{this.data}}
+    @columns={{this.columns}}
+    @headerSort={{false}}
+    resizableColumns={{true}}
+    @cellClick={{this.onCellClick}}
+  />
+</div>
