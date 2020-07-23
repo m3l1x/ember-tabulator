@@ -14,5 +14,8 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  // app.import('node_modules/tabulator-tables/dist/css/tabulator.css');
+  app.import('node_modules/tabulator-tables/dist/css/materialize/tabulator_materialize.css');
+
   return app.toTree();
 };
