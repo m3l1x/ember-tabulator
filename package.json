@@ -31,7 +31,7 @@
     "ember-cli-babel": "^7.23.0",
     "ember-cli-htmlbars": "^5.3.1",
     "ember-modifier": "^2.1.1",
-    "tabulator-tables": "^4.7.2"
+    "tabulator-tables": "^4.9.3"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
