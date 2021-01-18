@@ -1,6 +1,6 @@
 {
   "name": "ember-tabulator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Render tables with Tabulator",
   "keywords": [
     "ember-addon"
