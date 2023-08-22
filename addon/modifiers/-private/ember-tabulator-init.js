@@ -1,25 +1,23 @@
 import Modifier from 'ember-modifier';
-import Tabulator from 'tabulator-tables';
+import { registerDestructor } from '@ember/destroyable';
+import { Tabulator } from 'tabulator-tables/dist/js/tabulator_esm.min.js';
+
+function cleanup(tabulator) {
+  tabulator?.destroy();
+  tabulator = undefined;
+}
 
 export default class EmberTabulatorInitModifier extends Modifier {
   tabulator = undefined;
 
-  get options() {
-    return this.args.positional[0];
+  constructor(owner, args) {
+    super(owner, args);
+    registerDestructor(this, cleanup);
   }
 
-  get setInstance() {
-    return this.args.named.onUpdate;
-  }
-
-  didReceiveArguments() {
+  modify(element, [options], { onUpdate }) {
     this.tabulator?.destroy();
-    this.tabulator = new Tabulator(this.element, this.options);
-    this.setInstance(this.tabulator);
-  }
-
-  willRemove() {
-    this.tabulator?.destroy();
-    this.tabulator = undefined;
+    this.tabulator = new Tabulator(element, options);
+    onUpdate?.(this.tabulator);
   }
 }

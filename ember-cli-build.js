@@ -3,7 +3,7 @@
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
-  let app = new EmberAddon(defaults, {
+  const app = new EmberAddon(defaults, {
     // Add options here
   });
 
@@ -14,8 +14,17 @@ module.exports = function (defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  // app.import('node_modules/tabulator-tables/dist/css/tabulator.css');
-  app.import('node_modules/tabulator-tables/dist/css/materialize/tabulator_materialize.css');
+  // app.import('node_modules/tabulator-tables/dist/css/tabulator.min.css');
+  app.import(
+    'node_modules/tabulator-tables/dist/css/tabulator_materialize.min.css',
+  );
 
-  return app.toTree();
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };

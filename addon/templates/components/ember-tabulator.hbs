@@ -2,5 +2,5 @@
   class="ember-tabulator"
   ...attributes
   {{did-update this.updateData @data}}
-  {{-private/ember-tabulator-init this.args onUpdate=(fn this.setInstance)}}
+  {{-private/ember-tabulator-init this.args onUpdate=this.setInstance}}
 />
