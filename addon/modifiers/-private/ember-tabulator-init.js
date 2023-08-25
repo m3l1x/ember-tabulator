@@ -1,6 +1,6 @@
 import Modifier from 'ember-modifier';
 import { registerDestructor } from '@ember/destroyable';
-import { Tabulator } from 'tabulator-tables/dist/js/tabulator_esm.min.js';
+import { TabulatorFull as Tabulator } from 'tabulator-tables/dist/js/tabulator_esm.min.js';
 
 function cleanup(tabulator) {
   tabulator?.destroy();
