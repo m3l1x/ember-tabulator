@@ -1,16 +1,12 @@
-import { action } from '@ember/object';
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
 export default class EmberTabulatorComponent extends Component {
-  instance = undefined;
+  @tracked instance;
 
   @action
   setInstance(instance) {
     this.instance = instance;
-  }
-
-  @action
-  updateData() {
-    this.instance?.setData(this.args.data);
   }
 }

@@ -3,4 +3,8 @@
   ...attributes
   {{did-update this.updateData @data}}
   {{-private/ember-tabulator-init this.args onUpdate=this.setInstance}}
-/>
+>
+  {{#if (has-block)}}
+    {{yield this.instance}}
+  {{/if}}
+</div>

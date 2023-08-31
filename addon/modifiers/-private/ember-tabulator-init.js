@@ -14,8 +14,15 @@ export default class EmberTabulatorInitModifier extends Modifier {
   }
 
   modify(element, [options], { onUpdate }) {
-    this.tabulator?.destroy();
-    this.tabulator = new Tabulator(element, options);
-    onUpdate?.(this.tabulator);
+    if (!this.tabulator) {
+      this.tabulator = new Tabulator(element, {
+        reactiveData: true,
+        ...options,
+      });
+      options.events?.forEach((event) => {
+        this.tabulator.on(event.name, event.callback);
+      });
+      onUpdate?.(this.tabulator);
+    }
   }
 }
